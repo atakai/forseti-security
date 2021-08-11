@@ -108,7 +108,8 @@ class ServiceAccount(object):
                          'full_name': item.full_name,
                          'key_algorithm': data.get('keyAlgorithm'),
                          'valid_after_time': data.get('validAfterTime'),
-                         'valid_before_time': data.get('validBeforeTime')})
+                         'valid_before_time': data.get('validBeforeTime'),
+                         'key_type': data.get('keyType')})
         return keys
 
     def __repr__(self):
