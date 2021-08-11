@@ -325,6 +325,10 @@ class Rule(object):
 
         violations = []
         for key in service_account.keys:
+            key_type = key.get('key_type')
+            if key_type == 'SYSTEM_MANAGED':
+                continue
+
             key_id = key.get('key_id')
             full_name = key.get('full_name')
             LOGGER.debug('Checking key rotation for %s', full_name)
